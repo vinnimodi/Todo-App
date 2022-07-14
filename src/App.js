@@ -1,19 +1,16 @@
 
 import React, { useState, useEffect } from "react";
-// import Product from "./components/Product";
 import Addform from "./components/Addform";
+// import TestComp from "./components/TestComp";
+
+
 function App() {
-
   return (
-    <div>
-      <h1>Displaying the todos </h1>
-
-      <Addform>
-
-      </Addform>
-
+    <div style={{ backgroundColor: "lightgoldenrodyellow" }}>
+      <h1 style={{ fontFamily: "inherit", textDecoration: "underline" }}>Todos </h1>
+      <Addform >   </Addform> 
     </div>
-  );
+  )
 }
 
 export default App;
