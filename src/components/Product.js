@@ -1,29 +1,58 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState } from "react";
+import DoneIcon from "@mui/icons-material/Done";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
-function Product({ data }) {
+function Product({ todoEdit, todoDelete, todoComplete, todo }) {
+  const [newTitle, setNewTitle] = useState(todo.title);
 
-   return (
+  const handleChange = (e) => {
+    //  e.preventDefault();
+    if (todo.complete === true) setNewTitle(todo.title);
+    else {
+      todo.title = "";
+      setNewTitle(e.target.value);
+    }
+  };
+
+  return (
+    <div className="todo">
+      <button
+        style={{
+          backgroundColor: todo.completed ? "lightgreen" : "transparent",
+        }}
+        className="button-complete"
+        onClick={() => todoComplete(todo)}
+      >
+        <DoneIcon
+          style={{ display: todo.completed ? "initial" : "none" }}
+          id="i"
+        />
+      </button>
+      <input
+        style={{ textDecoration: todo.completed ? "line-through" : "" }}
+        type="text"
+        value={todo.title === "" ? newTitle : todo.title}
+        className="list"
+        onChange={handleChange}
+        onKeyUp={(e) => {
+          if (e.key === "Enter") todoEdit(todo, newTitle);
+          
+        }}
+      />
       <div>
-         <table style={{ "borderWidth": "3px", 'borderColor': "black", 'borderStyle': 'solid' }}>
-            <tbody >
-               <tr >
-                  <th>id</th>
-                  <th>userId</th>
-                  <th>title</th>
-               </tr>
-               {data.map(todo => (
-                  <tr key={todo.id}>
-                     <td> {todo.id}</td>
-                     <td>{todo.userId}</td>
-                     <td>{todo.title}</td>
-                     <td>{todo.completed}</td>
-                  </tr>
-               ))}
-            </tbody>
-         </table>
+        <button
+          className="button-edit"
+          onClick={() => todoEdit(todo, newTitle)}
+        >
+          <EditIcon id="i" />
+        </button>
+        <button className="button-delete" onClick={() => todoDelete(todo.id)}>
+          <DeleteIcon id="i" />
+        </button>
       </div>
-   )
+    </div>
+  );
 }
 
-export default Product
+export default Product;

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+.App {
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: #cbcbf3;
+}
+
+.title h1 {
+    color: #3a3a3a;
+    text-align: center;
+    margin: 30px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.btn_container {
+    /* width: 100%; */
+}
+
+.btn_container button {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: stretch;
+    padding: 10px 20px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+form h3 {
+    text-align: center;
+}
+
+form input {
+    padding: 10px 30px;
+    outline: none;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    flex-grow: 2;
+    margin-right: 3px;
+}
+
+.todo_container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.todo {
+    margin-top: 20px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 2px 5px #ddd;
+}
+
+.todo input {
+    width: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.button-complete,
+.button-delete,
+.button-edit {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: none;
+    border-radius: 20%;
+}
+
+#i {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.button-complete {
+    margin-right: 10px;
+    border: #333 1px solid;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.button-edit {
+    color: #56cfff;
+    margin-right: 10px;
+}
+
+.button-delete {
+    color: rgb(254, 96, 68);
+}
